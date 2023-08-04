@@ -44,7 +44,7 @@ Used as a callback URL. Server will send GET request to that URL after video pro
 
 Name: **webhookUrl**\
 Type: **text**\
-Required: **true**
+Required: **false**
 
 </details>
 
@@ -54,7 +54,7 @@ Required: **true**
 
 Video title.
 
-Name: **videoUrl**\
+Name: **title**\
 Type: **text**\
 Required: **true**
 
@@ -76,11 +76,11 @@ Required: **false**
 
 <summary>Tags</summary>
 
-Tags must be a string separated with comma. Example: "tag1,tag2,tag3"
+Tags must be a string containing tags separated with comma. Example: "tag1,tag2,tag3"
 
-Name: **videoUrl**\
+Name: **tags**\
 Type: **text**\
-Required: **true**
+Required: **false**
 
 </details>
 
@@ -90,7 +90,7 @@ Required: **true**
 
 To get playlist ID go to YouTube Studio and take the ID from URL: https://studio.youtube.com/playlist/**\<PLAYLIST\_ID>**/videos
 
-Name: **videoUrl**\
+Name: **playlistId**\
 Type: **text**\
 Required: **false**
 
