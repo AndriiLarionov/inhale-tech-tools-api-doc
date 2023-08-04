@@ -7,7 +7,7 @@ description: Upload video to YouTube channel
 The module requires Google OAuth 2.0 connection to get access token and pass it with [other parameters](youtube-upload-video.md#mappable-parameters) to upload a video using YouTube Data V3 API.
 
 {% hint style="warning" %}
-**Note:** Video will be uploaded to the root channel of your Google account.&#x20;
+**Note:** Video will be uploaded to the root channel of Google account, which you used to create OAuth 2.0 connection with.
 {% endhint %}
 
 Once uploading started, unique temporary _video uploading ID_ is created, which is sent in [response ](youtube-upload-video.md#interface)with _status_ field (generally equals "in process") in **5** seconds delay.
@@ -16,13 +16,13 @@ You can check video uploading status using the [YouTube: Get Video status](youtu
 
 The delay is defined in purpose to reduce speed of small videos processing to let Make.com easily handle requests.
 
-If _webhook URL_ is provided, once video processing finished (does not matter if video processed successfully or failed with error) server sends GET request to _webhook URL_ with _youtubeLink_ attached to the params of the URL.
+If _webhook URL_ is provided, server sends GET request to _webhook URL_ with _youtubeLink_ attached to the params of the URL once video processing finished.
 
 {% hint style="info" %}
 **Note:** _video uploading ID_ will be deleted after **10** mins if the video was successfully transferred to YouTube.
 {% endhint %}
 
-### Mappable parameters
+### Parameters
 
 <details>
 
@@ -113,7 +113,7 @@ Type: **text**
 
 <summary>Status</summary>
 
-Video uploading status.
+Video uploading status. Contains of these values: "in process" / "error" / "processed".
 
 Name: **status**\
 Type: **text**
@@ -122,4 +122,4 @@ Type: **text**
 
 ### Errors
 
-<table><thead><tr><th width="152">Status Code</th><th>Reasons</th></tr></thead><tbody><tr><td>400</td><td><ul><li>Validation error (title)</li><li>User exceeded max videos per day.</li><li>YouTube channel restrictions</li></ul></td></tr><tr><td>403</td><td><ul><li>Google OAuth 2.0 client exceeded daily quota limit for uploading videos.</li></ul></td></tr><tr><td>500</td><td>Internal Server error</td></tr></tbody></table>
+<table><thead><tr><th width="143">Status Code</th><th>Reasons</th></tr></thead><tbody><tr><td>400</td><td><ul><li>Validation error (title).</li><li>User exceeded max videos per day.</li><li>YouTube channel restrictions.</li></ul></td></tr><tr><td>403</td><td><ul><li>Google OAuth 2.0 client exceeded daily quota limit for uploading videos.</li></ul></td></tr><tr><td>500</td><td><ul><li>Internal Server error.</li></ul></td></tr></tbody></table>
