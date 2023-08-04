@@ -24,7 +24,7 @@ Required: **true**
 
 <summary>Status</summary>
 
-Video uploading status. Contains of these values: "in process" / "error" / "processed".
+Video uploading status. Could contain one of these values: "in process" / "error" / "processed".
 
 Name: **status**\
 Type: **text**
