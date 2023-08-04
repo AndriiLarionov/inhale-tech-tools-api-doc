@@ -1,25 +1,12 @@
 # Table of contents
 
 * [👋 Welcome to A Product](README.md)
-* [Page](page.md)
 
-## Overview
+## Connections
 
-* [💡 What we do](overview/what-we-do.md)
-* [✨ Our Features](overview/our-features.md)
+* [🔄 Google OAuth 2.0](connections/google-oauth-2.0.md)
 
-## Product Guides
+## Modules
 
-* [📪 Making a post](product-guides/making-a-post.md)
-* [📎 Understanding Projects](product-guides/understanding-projects.md)
-
-## Fundamentals
-
-* [🛠 Getting set up](fundamentals/getting-set-up/README.md)
-  * [📝 Setting permissions](fundamentals/getting-set-up/setting-permissions.md)
-  * [🧑 Inviting Members](fundamentals/getting-set-up/inviting-members.md)
-
-## Use Cases
-
-* [🎨 For Designers](use-cases/for-designers.md)
-* [🖥 For Developers](use-cases/for-developers.md)
+* [📹 YouTube: Upload Video](modules/youtube-upload-video.md)
+* [✅ YouTube: Get Video status](modules/youtube-get-video-status.md)
