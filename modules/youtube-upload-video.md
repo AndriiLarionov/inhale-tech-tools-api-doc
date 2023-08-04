@@ -6,7 +6,7 @@ description: Upload video to YouTube channel
 
 The module requires Google OAuth 2.0 connection to get access token and pass it with [other parameters](youtube-upload-video.md#mappable-parameters) to upload a video using YouTube Data V3 API.
 
-{% hint style="warning" %}
+{% hint style="info" %}
 **Note:** Video will be uploaded to the root channel of Google account, which you used to create OAuth 2.0 connection with.
 {% endhint %}
 
