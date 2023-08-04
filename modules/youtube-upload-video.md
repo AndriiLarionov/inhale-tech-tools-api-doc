@@ -4,7 +4,7 @@ description: Upload video to YouTube channel
 
 # 📹 YouTube: Upload Video
 
-The module uses Google OAuth 2.0 connection to get access token and pass it with [other parameters](youtube-upload-video.md#mappable-parameters) to request to upload a video using YouTube Data V3 API.
+The module requires Google OAuth 2.0 connection to get access token and pass it with [other parameters](youtube-upload-video.md#mappable-parameters) to upload a video using YouTube Data V3 API.
 
 {% hint style="warning" %}
 **Note:** Video will be uploaded to the root channel of your Google account.&#x20;
@@ -16,7 +16,7 @@ You can check video uploading status using the [YouTube: Get Video status](youtu
 
 The delay is defined in purpose to reduce speed of small videos processing to let Make.com easily handle requests.
 
-After video processing finished (does not matter if video processed successfully or failed with error) server sends updates status request GET request to webhook URL if it is provided.
+If _webhook URL_ is provided, once video processing finished (does not matter if video processed successfully or failed with error) server sends GET request to _webhook URL_ with _youtubeLink_ attached to the params of the URL.
 
 {% hint style="info" %}
 **Note:** _video uploading ID_ will be deleted after **10** mins if the video was successfully transferred to YouTube.
@@ -28,16 +28,10 @@ After video processing finished (does not matter if video processed successfully
 
 <summary>Video file URL</summary>
 
-Is a URL of video file, which will be uploaded to YouTube.&#x20;
+Is a URL of video file, which will be uploaded to YouTube. **Pay attention** URL must lead to the file itself, not an html page, which contains the video.
 
-**Pay attention** URL must lead to the file itself, not an html page, which contains the video.
-
-
-
-Name: **videoUrl**
-
-Type: **text**
-
+Name: **videoUrl**\
+Type: **text**\
 Required: **true**
 
 </details>
@@ -46,14 +40,10 @@ Required: **true**
 
 <summary><strong>Webhook URL</strong></summary>
 
-Used as a callback URL. Server will send GET request to that URL after video uploaded.
+Used as a callback URL. Server will send GET request to that URL after video processing finished.
 
-
-
-Name: **videoUrl**
-
-Type: **text**
-
+Name: **webhookUrl**\
+Type: **text**\
 Required: **true**
 
 </details>
@@ -64,12 +54,8 @@ Required: **true**
 
 Video title.
 
-
-
-Name: **videoUrl**
-
-Type: **text**
-
+Name: **videoUrl**\
+Type: **text**\
 Required: **true**
 
 </details>
@@ -80,12 +66,8 @@ Required: **true**
 
 Vide description.
 
-
-
-Name: **description**
-
-Type: **text**
-
+Name: **description**\
+Type: **text**\
 Required: **false**
 
 </details>
@@ -94,14 +76,10 @@ Required: **false**
 
 <summary>Tags</summary>
 
-...
+Tags must be a string separated with comma. Example: "tag1,tag2,tag3"
 
-
-
-Name: **videoUrl**
-
-Type: **text**
-
+Name: **videoUrl**\
+Type: **text**\
 Required: **true**
 
 </details>
@@ -110,14 +88,10 @@ Required: **true**
 
 <summary>Playlist ID</summary>
 
-...
+To get playlist ID go to YouTube Studio and take the ID from URL: https://studio.youtube.com/playlist/**\<PLAYLIST\_ID>**/videos
 
-
-
-Name: **videoUrl**
-
-Type: **text**
-
+Name: **videoUrl**\
+Type: **text**\
 Required: **false**
 
 </details>
@@ -130,10 +104,7 @@ Required: **false**
 
 ...
 
-
-
-Name: **uploadingID**
-
+Name: **uploadingID**\
 Type: **text**
 
 </details>
@@ -144,11 +115,11 @@ Type: **text**
 
 Video uploading status.
 
-
-
-Name: **status**
-
+Name: **status**\
 Type: **text**
 
 </details>
 
+### Errors
+
+<table><thead><tr><th width="152">Status Code</th><th>Reasons</th></tr></thead><tbody><tr><td>400</td><td><ul><li>Validation error (title)</li><li>User exceeded max videos per day.</li><li>YouTube channel restrictions</li></ul></td></tr><tr><td>403</td><td><ul><li>Google OAuth 2.0 client exceeded daily quota limit for uploading videos.</li></ul></td></tr><tr><td>500</td><td>Internal Server error</td></tr></tbody></table>

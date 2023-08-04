@@ -1,5 +1,5 @@
 ---
-description: Returns uploading video status by uploadingId
+description: Returns video status by video uploading ID
 ---
 
 # ✅ YouTube: Get Video status
