@@ -7,7 +7,7 @@ description: Used to upload videos to YouTube channel
 {% hint style="info" %}
 **How to use?** \
 \
-Just Give any name for the connection, press "Add" button, choose your Google account and allow all required permissions.
+Just give any name for the connection, press "Add" button, choose your Google account and allow all required permissions.
 
 **Also** you can overwrite the default Google OAuth 2.0 client using _Client ID_ and _Client Secret_ parameters.
 {% endhint %}
