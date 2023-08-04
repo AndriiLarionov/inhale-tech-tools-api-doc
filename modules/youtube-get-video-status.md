@@ -4,33 +4,37 @@ description: Returns video status by video uploading ID
 
 # ✅ YouTube: Get Video status
 
-### Parameters
+## Parameters
 
-<details>
-
-<summary>Uploading ID</summary>
+**Uploading ID**
 
 You can get video uploading ID from [YouTube: Upload Video](youtube-upload-video.md) module.
 
-Name: **uploadingId**\
-Type: **text**\
-Required: **true**
+{% code overflow="wrap" %}
+```javascript
+{
+    Name: "uploadingId"
+    Type: "text"
+    Required: true
+}
+```
+{% endcode %}
 
-</details>
+## Interface / Response body
 
-### Interface / Response body
-
-<details>
-
-<summary>Status</summary>
+**Status**
 
 Video uploading status. Could contain one of these values: "in process" / "error" / "processed".
 
-Name: **status**\
-Type: **text**
+{% code overflow="wrap" %}
+```javascript
+{
+    Name: "status"
+    Type: "text"
+}
+```
+{% endcode %}
 
-</details>
-
-### Errors
+## Errors
 
 <table><thead><tr><th width="143">Status Code</th><th>Reasons</th></tr></thead><tbody><tr><td>404</td><td><ul><li>Such uploading ID does not exist.</li><li>Uploading ID has been deleted as <strong>10</strong> min after video uploading passed.</li></ul></td></tr></tbody></table>

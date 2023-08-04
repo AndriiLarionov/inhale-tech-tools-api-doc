@@ -21,30 +21,28 @@ Default scope for every new connection:
 
 ### Parameters
 
-<details>
+**Client ID**
 
-<summary>Client ID</summary>
+{% code overflow="wrap" %}
+```javascript
+{
+    Name: "clientId"
+    Type: "text"
+    Required: false
+    Advanced: true
+}
+```
+{% endcode %}
 
-Name: **clientId**
+**Client Secret**
 
-Type: **text**
-
-Required: **false**
-
-Advanced: **true**
-
-</details>
-
-<details>
-
-<summary>Client Secret</summary>
-
-Name: **clientSecret**
-
-Type: **text**
-
-Required: **false**
-
-Advanced: **true**
-
-</details>
+{% code overflow="wrap" %}
+```javascript
+{
+    Name: "clientSecret"
+    Type: "text"
+    Required: false
+    Advanced: true
+}
+```
+{% endcode %}
