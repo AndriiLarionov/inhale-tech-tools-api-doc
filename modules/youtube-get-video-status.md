@@ -26,6 +26,10 @@ You can get video uploading ID from [YouTube: Upload Video](youtube-upload-video
 
 Video uploading status. Could contain one of these values: "in process" / "error" / "processed".
 
+{% hint style="warning" %}
+**Important note:** The uploading status, whish is accessible by the [YouTube: Get Video status](youtube-get-video-status.md) module, does not actually correspond to the YouTube video status, it only determines is the module processed a video thus transferred it correctly to YouTube or not.
+{% endhint %}
+
 {% code overflow="wrap" %}
 ```javascript
 {
