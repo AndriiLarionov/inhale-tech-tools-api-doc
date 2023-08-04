@@ -12,7 +12,11 @@ The module requires Google OAuth 2.0 connection to get access token and pass it 
 
 Once uploading started, unique temporary _video uploading ID_ is created, which is sent in [response ](youtube-upload-video.md#interface)with _status_ field (generally equals "in process") in **5** seconds delay.
 
-You can check video uploading status using the [YouTube: Get Video status](youtube-get-video-status.md) module. This status does not actually correspond to the YouTube video status, it only determines is the module processed a video thus transferred it correctly to YouTube or not.
+You can check video uploading status using the [YouTube: Get Video status](youtube-get-video-status.md) module.&#x20;
+
+{% hint style="warning" %}
+**Important note:** The uploading status, whish is accessible by the [YouTube: Get Video status](youtube-get-video-status.md) module, does not actually correspond to the YouTube video status, it only determines is the module processed a video thus transferred it correctly to YouTube or not.
+{% endhint %}
 
 The delay is defined in purpose to reduce speed of small videos processing to let Make.com easily handle requests.
 
@@ -126,6 +130,10 @@ Unique temporary ID, which you can use to get uploading video status using [YouT
 **Status**
 
 Video uploading status. Could contain one of these values: "in process" / "error" / "processed".
+
+{% hint style="warning" %}
+**Important note:** The uploading status, whish is accessible by the [YouTube: Get Video status](youtube-get-video-status.md) module, does not actually correspond to the YouTube video status, it only determines is the module processed a video thus transferred it correctly to YouTube or not.
+{% endhint %}
 
 {% code fullWidth="false" %}
 ```javascript
