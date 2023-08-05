@@ -10,7 +10,7 @@ The module requires Google OAuth 2.0 connection to get access token and pass it 
 **Note:** Video will be uploaded to the root channel of Google account, which you used to create OAuth 2.0 connection with.
 {% endhint %}
 
-Once uploading started, unique temporary _video uploading ID_ is created, which is sent in [response ](youtube-upload-video.md#interface)with _status_ field (generally equals "in process") in **5** seconds delay.
+Once uploading started, unique temporary _video uploading ID_ is created, which is sent in [response ](youtube-upload-video.md#interface)with _status_ field (generally equals "in process").
 
 You can check video uploading status using the [YouTube: Get Video status](youtube-get-video-status.md) module.&#x20;
 
@@ -18,9 +18,7 @@ You can check video uploading status using the [YouTube: Get Video status](youtu
 **Important note:** The uploading status, whish is accessible by the [YouTube: Get Video status](youtube-get-video-status.md) module, does not actually correspond to the YouTube video status, it only determines is the module processed a video thus transferred it correctly to YouTube or not.
 {% endhint %}
 
-The delay is defined in purpose to reduce speed of small videos processing to let Make.com easily handle requests.
-
-If _webhook URL_ is provided, server sends GET request to _webhook URL_ with _youtubeLink_ attached to the params of the URL once video processing finished.
+If _webhook URL_ is provided, server sends GET request (in **5** seconds delay from initial request started processing) to _webhook URL_ with _youtubeLink_ attached to the params of the URL once video processing finished.
 
 {% hint style="info" %}
 **Note:** _video uploading ID_ will be deleted after **10** mins if the video was successfully transferred to YouTube.
